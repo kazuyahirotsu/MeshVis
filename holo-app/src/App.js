@@ -6,6 +6,7 @@ import AFrameRegister from './AFrameRegister';
 import AFrameFetch from './AFrameFetch';
 import AFrameFetchDup2 from './AFrameFetchDup2';
 import AFrameFetchDup4 from './AFrameFetchDup4';
+import AFrameFetchObj from './AFrameFetchObj';
 import object from './scene.gltf'
 import object1 from './scene1.gltf'
 import object2 from './scene2.gltf'
@@ -50,20 +51,23 @@ function App() {
       </header> */}
 
 
-    <a-scene>
+    <a-scene light="defaultLightsEnabled: false">
         {/* <a-assets>
           <a-asset-item id="model" src="http://127.0.0.1:5000/scene.gltf"></a-asset-item>
         </a-assets> */}
         {/* <a-entity position="0 0 -5" gltf-model="#model"></a-entity> */}
         {/* <a-entity position="0 0 -5" gltf-model="url(http://127.0.0.1:5000/scene.gltf)"></a-entity> */}
+        {/* <a-entity position="0 1.3 0" scale="0.001 0.001 0.001" obj-model="obj: url(test.obj);"></a-entity> */}
+
         {/* <a-camera></a-camera> */}
-        {/* <AFrameEntity modelSrc="scene.gltf" /> */}
+        {/* <AFrameEntity modelSrc="scene.gltf" /> */} 
         {/* <AFrameEntity modelSrc={object} /> */}
         {/* <AFrameObjEntity modelSrc="scene.obj" /> */}
         {/* <AFrameRegister modelSrc={object}  /> */}
-        <AFrameFetch modelSrc="http://127.0.0.1:5000/scene.gltf"  />
-        <AFrameFetchDup2 modelSrc="http://127.0.0.1:5000/scene.gltf"  />
-        <AFrameFetchDup4 modelSrc="http://127.0.0.1:5000/scene.gltf"  />
+        {/* <AFrameFetch modelSrc="http://127.0.0.1:5000/scene.gltf"  /> */}
+        <AFrameFetchObj />
+        {/* <AFrameFetchDup2 modelSrc="http://127.0.0.1:5000/scene.gltf"  />
+        <AFrameFetchDup4 modelSrc="http://127.0.0.1:5000/scene.gltf"  /> */}
       </a-scene>
     </div>
   );
