@@ -4,6 +4,8 @@ import AFrameEntity from './AFrameEntity';
 import AFrameObjEntity from './AFrameObjEntity';
 import AFrameRegister from './AFrameRegister';
 import AFrameFetch from './AFrameFetch';
+import AFrameFetchDup2 from './AFrameFetchDup2';
+import AFrameFetchDup4 from './AFrameFetchDup4';
 import object from './scene.gltf'
 import object1 from './scene1.gltf'
 import object2 from './scene2.gltf'
@@ -60,6 +62,8 @@ function App() {
         {/* <AFrameObjEntity modelSrc="scene.obj" /> */}
         {/* <AFrameRegister modelSrc={object}  /> */}
         <AFrameFetch modelSrc="http://127.0.0.1:5000/scene.gltf"  />
+        <AFrameFetchDup2 modelSrc="http://127.0.0.1:5000/scene.gltf"  />
+        <AFrameFetchDup4 modelSrc="http://127.0.0.1:5000/scene.gltf"  />
       </a-scene>
     </div>
   );
