@@ -11,7 +11,7 @@ const AFrameFetch = () => {
         fetch('http://127.0.0.1:5000/scene.gltf')
           .then(response => response.text())
           .then(gltfText => setTempGltfModel(gltfText));
-      },100);
+      },5000);
     }, []);
   
     useEffect(() => {

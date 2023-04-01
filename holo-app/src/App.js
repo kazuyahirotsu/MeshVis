@@ -57,8 +57,10 @@ function App() {
         </a-assets> */}
         {/* <a-entity position="0 0 -5" gltf-model="#model"></a-entity> */}
         {/* <a-entity position="0 0 -5" gltf-model="url(http://127.0.0.1:5000/scene.gltf)"></a-entity> */}
+        {/* <a-entity position="0 1.3 0" scale="0.001 0.001 0.001" obj-model="obj: url(test.obj);"></a-entity> */}
+
         {/* <a-camera></a-camera> */}
-        {/* <AFrameEntity modelSrc="scene.gltf" /> */}
+        {/* <AFrameEntity modelSrc="scene.gltf" /> */} 
         {/* <AFrameEntity modelSrc={object} /> */}
         {/* <AFrameObjEntity modelSrc="scene.obj" /> */}
         {/* <AFrameRegister modelSrc={object}  /> */}
