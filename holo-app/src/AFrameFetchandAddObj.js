@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
-const AFrameFetchandAdd = () => {
+const AFrameFetchandAddObj = () => {
   const [scene, setScene] = useState(null);
-  const [tempGltfModel, setTempGltfModel] = useState('');
+  const [tempObjModel, setTempObjModel] = useState('');
   const [modelLoaded, setModelLoaded] = useState(false);
 
   useEffect(() => {
@@ -15,15 +15,16 @@ const AFrameFetchandAdd = () => {
   }, []);
 
   useEffect(() => {
-    if (scene && tempGltfModel && modelLoaded) {
+    if (scene && tempObjModel && modelLoaded) {
       const oldEntityRef = scene.querySelector('#old-model-entity');
       if (oldEntityRef) {
         oldEntityRef.setAttribute('visible', 'false');
       }
       const newEntityRef = document.createElement('a-entity');
       newEntityRef.setAttribute('id', 'new-model-entity');
-      newEntityRef.setAttribute('position', '0 0 0');
-      newEntityRef.setAttribute('gltf-model', `data:application/json;base64,${btoa(tempGltfModel)}`);
+      newEntityRef.setAttribute('position', '0 1.1 0');
+      newEntityRef.setAttribute('scale', '0.001 0.001 0.001');
+      newEntityRef.setAttribute('obj-model', `obj: url(data:text/plain;base64,${btoa(tempObjModel)})`);
       newEntityRef.setAttribute('opacity', '0');
       scene.appendChild(newEntityRef);
   
@@ -37,14 +38,14 @@ const AFrameFetchandAdd = () => {
         setModelLoaded(false);
       }, 200);
     }
-  }, [scene, tempGltfModel, modelLoaded]);
+  }, [scene, tempObjModel, modelLoaded]);
   
 
   const fetchGltf = () => {
     fetch('https://10.218.204.110:443/scene.obj')
       .then(response => response.text())
-      .then(gltfText => {
-        setTempGltfModel(gltfText);
+      .then(objText => {
+        setTempObjModel(objText);
         setModelLoaded(true);
       });
   };
@@ -53,9 +54,9 @@ const AFrameFetchandAdd = () => {
     <a-scene ref={(ref) => setScene(ref)}>
       <a-assets></a-assets>
       <a-entity id="old-model-entity"></a-entity>
-      <a-camera position="0 0 5"></a-camera>
+      <a-camera position="0 0 0"></a-camera>
     </a-scene>
   );
 };
 
-export default AFrameFetchandAdd;
+export default AFrameFetchandAddObj;
